@@ -1,6 +1,7 @@
 const sitel = [
   {
     id: 1,
+    type: 'Guest Reviews - Sitel',
     pc: "Accommodation",
     sc: "Slips/Trips/Falls",
     main: {
