@@ -1,39 +1,153 @@
 <%- include('partials/header') %>
 
+<div class="mt-3">
+  <a href="/" class="btn btn-primary">Home</a>
+</div>
+
 <div class="card mt-3">
   <div class="card-header">
     <h4><%= risk.pc %></h4>
     <h6><%= risk.sc %></h6>
   </div>
-  <div class="card-body">
-    <div>
-      <h6>H&S Investigate</h6>
-      <p><%= risk.main.matrix.hsInvest %></p>
-    </div>
-    <div>
-      <h6>Investigate Frequency</h6>
-      <p>Each Occurrence</p>
-    </div>
-    <div>
-      <h6>Previous Complaint History</h6>
-      <p>Each Occurrence</p>
-    </div>
-    <div>
-      <h6>Audit History</h6>
-      <p>Each Occurrence</p>
-    </div>
-    <div>
-      <h6>Partner Response Time</h6>
-      <p>30 days - 3 requests</p>
-    </div>
-    <div>
-      <h6>Exception(s)</h6>
-      <p>Audit Covers/Investigated/concern resolved within previous 1 year</p>
+ </div>
+
+<div class="accordion mt-3" id="risk">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        Risk Matrix
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#risk">
+      <div class="accordion-body">
+        <!--Investigation Phase-->
+        <div class="row">
+          <h4>Investigation Phase</h4>
+        </div>
+        <div class="row">
+          <div class="col-3">
+            <h6>H&S Investigate</h6>
+            <p><%= risk.main.matrix.hsInvest %></p>
+          </div>
+          <div class="col-3">
+            <h6>Investigate Frequency</h6>
+            <p><%= risk.main.matrix.investFreq %></p>
+          </div>
+          <div class="col-3">
+            <h6>Previous Complaint History</h6>
+            <p><%= risk.main.matrix.prevComp %></p>
+          </div>
+          <div class="col-3">
+            <h6>Audit History</h6>
+            <p><%= risk.main.matrix.auditHist %></p>
+          </div>
+          <div class="col-3">
+            <h6>Partner Response Time</h6>
+            <p><%= risk.main.matrix.partResp %></p>
+          </div>
+          <div class="col-3">
+            <h6>Exception(s)</h6>
+            <p><%= risk.main.matrix.exceptions %></p>
+          </div>
+          <div class="col-3">
+            <h6>Expected Partner Action</h6>
+            <p><%= risk.main.matrix.expecPartAct %></p>
+          </div>
+          <div class="col-3">
+            <h6>Include MM</h6>
+            <p><%= risk.main.matrix.mm %></p>
+          </div>
+        </div>
+        
+        <!--Post investigation - Gaps identified in process-->
+          <div class="row">
+            <h4>Post investigation - Gaps identified in process</h4>
+          </div>
+          <div class="row">
+            <div class="col-3">
+              <h6>Action</h6>
+              <p><%= risk.main.matrix.gapAct %></p>
+            </div>
+          </div>
+
+          <!--Post Investigation - No response received-->
+          <div class="row">
+            <h4>Post Investigation - No response received</h4>
+          </div>
+          <div class="row">
+            <div class="col-3">
+              <h6>Escalation Action</h6>
+              <p><%= risk.main.matrix.respEscAct %></p>
+            </div>
+            <div class="col-3">
+              <h6>> 30 Days</h6>
+              <p><%= risk.main.matrix.day30 %></p>
+            </div>
+            <div class="col-3">
+              <h6>Relocation</h6>
+              <p><%= risk.main.matrix.respRelo %></p>
+            </div>
+          </div>
+
+          <!--Post Investigation - Concerning Response -->
+          <div class="row">
+            <h4>Post Investigation - Concerning Response</h4>
+          </div>
+          <div class="row">
+            <div class="col-3">
+              <h6>Action</h6>
+              <p><%= risk.main.matrix.concAct %></p>
+            </div>
+            <div class="col-3">
+              <h6>Relocation</h6>
+              <p><%= risk.main.matrix.concRelo %></p>
+            </div>
+          </div>
+
+          <!--Escalation Path -->
+          <div class="row">
+            <h4>Escalation Path</h4>
+          </div>
+          <div class="row">
+           
+          </div>
+
+          <!--Evidence -->
+          <div class="row">
+            <h4>Evidence</h4>
+          </div>
+          <div class="row">
+
+          </div>
+
+      </div>
     </div>
   </div>
-  <div class="card-footer">
-    Footer
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        Questions
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#risk">
+      <div class="accordion-body">
+        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        Reccommendations
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#risk">
+      <div class="accordion-body">
+        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
   </div>
 </div>
+
 
 <%- include('partials/footer') %>
