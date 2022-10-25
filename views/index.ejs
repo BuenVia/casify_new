@@ -1,9 +1,16 @@
 <%- include('partials/header') %>
 
 
-<% riskMatrix.forEach(risk => { %>
-  <a href="javascript:void(0)"><%= risk.secCat %></a>
+<% primCat.forEach(pc => { %>
+  <h4><%= pc %></h4>
+  <% riskMatrix.forEach(risk => { %>
+    <% if (risk.pc === pc) { %>
+      <a href="<%= risk.id %>"><%= risk.sc %></a> 
+      <% } %>
+  <% }) %>
 <% }) %>
+
+
 
 <!-- <% riskMatrix.forEach(risk => { %>
 

@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const app = express();
 
+// Dotenv
 dotenv.config();
 
 mongoose.connect(process.env.MONGO_DB);
@@ -16,6 +17,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.urlencoded(`${__dirname}/public`));
 
 app.get("/", pageRouter);
+app.get("/:id", pageRouter);
 
 app.get("/:primCat/:secCat", pageRouter);
 
